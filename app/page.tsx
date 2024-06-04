@@ -32,7 +32,7 @@ export default function Home() {
                     type="text"
                     id="url"
                     name="url"
-                    value="https://www.justgiving.com/campaign/Robburrowappeal"
+                    defaultValue="https://www.justgiving.com/campaign/Robburrowappeal"
                   />
                 </div>
                 <div>
