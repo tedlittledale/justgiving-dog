@@ -1,8 +1,7 @@
 import React, { Suspense } from "react";
 import type { Metadata, ResolvingMetadata } from "next";
 import { getInfoFromDb } from "@/app/actions";
-import { redirect } from "next/navigation";
-
+import Redirect from "./Redirect";
 export const revalidate = 60;
 
 type Props = {
@@ -60,7 +59,7 @@ export async function generateMetadata(
 const ResultPage = async ({ params }: Props) => {
   const id = params.id;
   const { url } = await getInfoFromDb(id);
-  redirect(url);
+
   return (
     <>
       <Suspense
@@ -69,7 +68,9 @@ const ResultPage = async ({ params }: Props) => {
             <p className="text-2xl font-bold text-center">Redirecting...</p>
           </div>
         }
-      ></Suspense>
+      >
+        <Redirect url={url} />
+      </Suspense>
     </>
   );
 };

@@ -92,3 +92,7 @@ export async function getCampaignInfo(formData: FormData) {
   // mutate data
   // revalidate cache
 }
+
+export async function navigate(url: string) {
+  redirect(url);
+}
