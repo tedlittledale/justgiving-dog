@@ -36,7 +36,7 @@ export async function generateMetadata(
       siteName: "JustGiving",
       images: [
         {
-          url: `https://tedspace.me/${imageString}`, // Must be an absolute URL
+          url: `https://justgiving-dog.vercel.app/${imageString}`, // Must be an absolute URL
           width: 1200,
           height: 630,
         },
@@ -50,7 +50,7 @@ export async function generateMetadata(
       description: Summary,
       creator: "@justgiving",
       images: {
-        url: `https://tedspace.me/${imageString}`,
+        url: `https://justgiving-dog.vercel.app/${imageString}`,
         alt: `Image for ${Title} campaign`,
       },
     },
