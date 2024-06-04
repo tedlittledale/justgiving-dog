@@ -53,7 +53,7 @@ export default function SharingBox({ id }: { id: string }) {
         }}
         data-copy-to-clipboard-target="npm-install-copy-button"
         data-tooltip-target="tooltip-copy-npm-install-copy-button"
-        className="absolute end-2 top-1/2 -translate-y-1/2 text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg p-2 inline-flex items-center justify-center"
+        className="bg-gray-50 absolute end-2 top-1/2 -translate-y-1/2 text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg p-2 inline-flex items-center justify-center"
       >
         <span id="default-icon">
           <svg
@@ -88,7 +88,7 @@ export default function SharingBox({ id }: { id: string }) {
       <div
         id="tooltip-copy-npm-install-copy-button"
         role="tooltip"
-        className="absolute -right-[150px] width-[150px] top-0 z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700"
+        className="absolute sm:-right-[150px] width-[150px] sm:top-0 z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700"
       >
         <span id="default-tooltip-message">Copy to clipboard</span>
         <span id="success-tooltip-message" className="hidden">

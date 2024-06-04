@@ -21,28 +21,26 @@ export default async function New({ params }: Props) {
 
   const imageString = `/api/og?title=${Title}&TargetAmount=${TargetAmount}&percentage=${percentage}&TotalNumberOfDonations=${TotalNumberOfDonations}&CurrentTotal=${TotalAmount}&ImageName=${ImageName}&cache=${Date.now()}`;
   return (
-    <main className="flex min-h-screen flex-col items-center text-center justify-between p-24">
-      <section className="bg-white dark:bg-gray-900">
-        <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
-          <div className="mx-auto max-w-screen-md sm:text-center">
-            <h2 className="mb-4 text-3xl tracking-tight font-extrabold text-gray-900 sm:text-4xl dark:text-white">
+    <main className="flex min-h-screen flex-col items-center content-around text-center  p-4 lg:p-16">
+      <section className="bg-white dark:bg-gray-900 w-full">
+        <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6 w-full">
+          <div className="mx-auto max-w-screen-md sm:text-center w-full">
+            <h2 className="mb-4 text-xl sm:text-3xl tracking-tight font-extrabold text-gray-900 sm:text-4xl dark:text-white">
               Here is your new sharing link
             </h2>
             <SharingBox id={id} />
           </div>
         </div>
       </section>
-      <h3 className="mb-4 text-2xl text-balance font-extrabold text-gray-900 sm:text-2xl dark:text-white w-[400px]">
+      <h3 className="mb-4 text-xl sm:text-2xl text-balance font-extrabold text-gray-900 sm:text-2xl dark:text-white sm:w-[400px]">
         Here is a preview of how it will look when shared on social media
       </h3>
       {/* <Image src={imageString} alt="" width={1200} height={630} /> */}
-      <div className="w-[524px] max-w-full cursor-pointer font-[Helvetica]">
+      <div className="sm:w-[524px] max-w-full cursor-pointer font-[Helvetica]">
         <div className="border-[1px] border-b-0 border-[#dadde1] bg-cover bg-center bg-no-repeat">
-          <div className="w-full relative h-[262px]">
-            <Image
-              width="524"
-              height="262"
-              className="h-full w-full absolute top-0 object-cover block"
+          <div className="w-full relative ">
+            <img
+              className="w-full  top-0 object-cover block"
               src={imageString}
               alt="campaign image"
             />

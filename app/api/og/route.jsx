@@ -25,9 +25,12 @@ export async function GET(request) {
       maximumFractionDigits: 0,
     }).format(Math.round(parseInt(searchParams.get("TargetAmount") || "")));
     const percentage = searchParams.get("percentage") || "";
-    const donations = new Intl.NumberFormat("en-GB", {}).format(
-      searchParams.get("TotalNumberOfDonations") || ""
-    );
+    const donations = searchParams.get("TotalNumberOfDonations")
+      ? new Intl.NumberFormat("en-GB", {}).format(
+          searchParams.get("TotalNumberOfDonations") || ""
+        )
+      : null;
+
     const image = searchParams.get("ImageName") || "";
     const currentTotal = new Intl.NumberFormat("en-GB", {
       style: "currency",
@@ -48,7 +51,7 @@ export async function GET(request) {
           tw="flex flex-col w-full h-full justify-center "
           style={{
             backgroundImage: `url(https://images.justgiving.com/image/${image})`,
-            backgroundSize: "1200 px 630px",
+            backgroundSize: "1200px auto",
             badkgroundReapeat: "no-repeat",
             backgroundPosition: "center",
           }}
@@ -123,22 +126,26 @@ export async function GET(request) {
                 </span>{" "}
                 <span>target</span>
               </div>
-              <div
-                class="cp-body-medium"
-                tw="flex"
-                style={{
-                  fontSize: "1.6rem",
-                  lineHeight: "2.4rem",
-                  letterSpacing: ".005em",
-                  fontWeight: "400",
-                }}
-              >
-                <span class="text-color-grey-300" tw="mx-1 inline-flex">
-                  by
-                </span>{" "}
-                <span tw="mx-1 inline-flex text-[#5E2A93]">{donations}</span>{" "}
-                supporters
-              </div>
+              {donations !== "NaN" ? (
+                <div
+                  class="cp-body-medium"
+                  tw="flex"
+                  style={{
+                    fontSize: "1.6rem",
+                    lineHeight: "2.4rem",
+                    letterSpacing: ".005em",
+                    fontWeight: "400",
+                  }}
+                >
+                  <span class="text-color-grey-300" tw="mx-1 inline-flex">
+                    by
+                  </span>{" "}
+                  <span tw="mx-1 inline-flex text-[#5E2A93]">{donations}</span>{" "}
+                  supporters
+                </div>
+              ) : (
+                <></>
+              )}
             </div>
           </div>
         </div>
