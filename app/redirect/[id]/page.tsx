@@ -35,7 +35,7 @@ export async function generateMetadata(
       siteName: "JustGiving",
       images: [
         {
-          url: `https://justgiving.tedspace.dev/${imageString}`, // Must be an absolute URL
+          url: `https://tommys.tedspace.dev/${imageString}`, // Must be an absolute URL
           width: 1200,
           height: 630,
         },
@@ -49,7 +49,7 @@ export async function generateMetadata(
       description: Summary,
       creator: "@justgiving",
       images: {
-        url: `https://justgiving.tedspace.dev/${imageString}`,
+        url: `https://tommys.tedspace.dev/${imageString}`,
         alt: `Image for ${Title} campaign`,
       },
     },
