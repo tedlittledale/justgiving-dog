@@ -37,11 +37,12 @@ export async function getCampaignInfo(formData: FormData) {
   console.log({ shortCampaignName, shortFundraisingName, url });
 
   let redirectUrl = "/";
-  if (shortCampaignName) {
+  if (!!shortCampaignName) {
     try {
       const jgData = await fetch(
         `https://api.justgiving.com/f7da7f38/v1/campaign/byshortname/${shortCampaignName}?format=json`
       ).then((res) => res.json());
+      console.log("hre", { jgData });
       const {
         TargetAmount,
         Title,
@@ -87,7 +88,7 @@ export async function getCampaignInfo(formData: FormData) {
     } catch (error) {
       console.log({ error });
     }
-  } else if (shortFundraisingName || shortPageName) {
+  } else if (!!shortFundraisingName || !!shortPageName) {
     try {
       console.log(
         `https://api.justgiving.com/f7da7f38/v1/fundraising/pages/${
@@ -108,13 +109,15 @@ export async function getCampaignInfo(formData: FormData) {
         totalRaisedPercentageOfFundraisingTarget: percentage,
         totalRaisedOffline,
         totalRaisedOnline,
+        grandTotalRaisedExcludingGiftAid,
       } = jgData;
+
       const imageName = imageUrl.split("/").pop()?.split("?")[0];
       console.log({
         TargetAmount,
         Title,
         ImageName: imageName,
-        TotalAmount: totalRaisedOffline + totalRaisedOnline,
+        TotalAmount: grandTotalRaisedExcludingGiftAid,
         percentage,
         Summary,
       });
@@ -128,7 +131,7 @@ export async function getCampaignInfo(formData: FormData) {
         TargetAmount,
         Title,
         ImageName: imageName,
-        TotalAmount: totalRaisedOffline + totalRaisedOnline,
+        TotalAmount: grandTotalRaisedExcludingGiftAid,
         TotalNumberOfDonations: null,
         percentage,
         Summary,
