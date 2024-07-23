@@ -8,7 +8,7 @@ export function SubmitButton() {
   return (
     <button
       type="submit"
-      className="py-3 px-5 w-full text-sm font-medium text-center text-white rounded-lg border cursor-pointer bg-blue-600 sm:rounded-none sm:rounded-r-lg hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+      className="py-3 px-5 whitespace-nowrap w-full text-sm font-medium text-center text-white rounded-lg border cursor-pointer bg-blue-600 sm:rounded-none sm:rounded-r-lg hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
     >
       {pending ? (
         <svg
@@ -32,7 +32,7 @@ export function SubmitButton() {
           ></path>
         </svg>
       ) : (
-        "Go"
+        "Create & Preview Link"
       )}
     </button>
   );
