@@ -32,7 +32,7 @@ export function SubmitButton() {
           ></path>
         </svg>
       ) : (
-        "Create & Preview Link"
+        "Create Link & Preview "
       )}
     </button>
   );

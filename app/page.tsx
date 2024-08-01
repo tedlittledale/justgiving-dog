@@ -9,7 +9,8 @@ export default function Home() {
           <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
             <div className="mx-auto max-w-screen-md sm:text-center">
               <h2 className="mb-4 text-2xl sm:text-3xl tracking-tight font-extrabold text-gray-900 sm:text-4xl dark:text-white">
-                Create your Tommy&apos;s branded JustGiving campaign link
+                Create your Alzheimer&apos;s Society branded JustGiving campaign
+                link
               </h2>
               <p className="mx-auto mb-8 max-w-2xl font-light text-gray-500 md:mb-12 text-m sm:text-xl dark:text-gray-400">
                 Paste your JustGiving campaign URL below to generate a new
@@ -30,11 +31,11 @@ export default function Home() {
 
                   <input
                     className="block p-3  w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 sm:rounded-none sm:rounded-l-lg focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                    placeholder="https://www.justgiving.com/fundraising/AlyaRose"
+                    placeholder="https://www.justgiving.com/fundraising/Neilatlanticrow"
                     type="text"
                     id="url"
                     name="url"
-                    defaultValue="https://www.justgiving.com/fundraising/AlyaRose"
+                    defaultValue="https://www.justgiving.com/fundraising/Neilatlanticrow"
                   />
                 </div>
                 <div>

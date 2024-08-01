@@ -8,13 +8,13 @@ export default function SharingBox({ id }: { id: string }) {
         id="npm-install-copy-button"
         type="text"
         className="col-span-6 bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
-        value={`https://tommys.tedspace.dev/redirect/${id}`}
+        value={`https://alzheimers-society.tedspace.dev/redirect/${id}`}
         disabled
         readOnly
       />
       <button
         onClick={() => {
-          copy(`https://tommys.tedspace.dev/redirect/${id}`);
+          copy(`https://alzheimers-society.tedspace.dev/redirect/${id}`);
 
           const defaultIcon = document.getElementById("default-icon");
           const successIcon = document.getElementById("success-icon");
